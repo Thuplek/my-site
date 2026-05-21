@@ -387,6 +387,12 @@ function Projects({ t }) {
 }
 
 function AdSection({ t }) {
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {}
+  }, []);
+
   return (
     <Reveal as="section" id="ad" className="ad-section">
       <div className="ad-inner">
@@ -402,7 +408,6 @@ function AdSection({ t }) {
                data-ad-slot="8984824177"
                data-ad-format="auto"
                data-full-width-responsive="true"></ins>
-          <script dangerouslySetInnerHTML={{__html: "(adsbygoogle = window.adsbygoogle || []).push({});"}} />
         </div>
       </div>
     </Reveal>
