@@ -125,6 +125,11 @@ window.SITE_DATA = {
         { k: "LinkedIn", v: "in/marcos-fellipe-watanabe", href: "https://www.linkedin.com/in/marcos-fellipe-watanabe-733a83122/" }
       ]
     },
+    ad: {
+      chip: "☕ cafezinho",
+      heading: "Deixei esse anúncio aqui",
+      note: "pra me ajudar a comprar o cafezinho. Sem drama — se rolar, valeu demais 🙏"
+    },
     footer: "© 2026 Marcos Fellipe Watanabe · @thuplek · Feito com café e código"
   },
   en: {
@@ -251,6 +256,11 @@ window.SITE_DATA = {
         { k: "WhatsApp", v: "(99) 99646-6265", href: "https://wa.me/5599996466265" },
         { k: "LinkedIn", v: "in/marcos-fellipe-watanabe", href: "https://www.linkedin.com/in/marcos-fellipe-watanabe-733a83122/" }
       ]
+    },
+    ad: {
+      chip: "☕ coffee fund",
+      heading: "I left this ad here",
+      note: "to help me afford coffee. No pressure — but if it happens, thanks a lot 🙏"
     },
     footer: "© 2026 Marcos Fellipe Watanabe · @thuplek · Made with coffee and code"
   }

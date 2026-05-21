@@ -386,6 +386,23 @@ function Projects({ t }) {
   );
 }
 
+function AdSection({ t }) {
+  return (
+    <Reveal as="section" id="ad" className="ad-section">
+      <div className="ad-inner">
+        <div className="ad-meta">
+          <span className="ad-chip">{t.ad.chip}</span>
+          <h3 className="ad-heading">{t.ad.heading}</h3>
+          <p className="ad-note">{t.ad.note}</p>
+        </div>
+        <div className="ad-slot">
+          {/* Cole aqui seu código de anúncio (Google AdSense, etc.) */}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
 function Contact({ t }) {
   return (
     <section id="contact" className="contact">
@@ -476,6 +493,7 @@ function App() {
         <Education t={t} />
         <Projects t={t} />
         <Contact t={t} />
+        <AdSection t={t} />
         <footer className="footer">{t.footer}</footer>
       </div>
     </>

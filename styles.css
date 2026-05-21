@@ -491,6 +491,80 @@ section { padding: 120px 0; position: relative; }
 .contact-chan .v { font-size: 14px; color: var(--ink); }
 
 /* ============================================
+   Ad section
+   ============================================ */
+.ad-section {
+  padding: 64px 0 40px;
+}
+.ad-inner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 36px 40px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.015);
+}
+.ad-meta {
+  flex: 1;
+  min-width: 0;
+}
+.ad-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.ad-heading {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.ad-note {
+  font-size: 14px;
+  color: var(--ink-mute);
+  line-height: 1.6;
+  max-width: 38ch;
+}
+.ad-slot {
+  flex-shrink: 0;
+  width: 320px;
+  min-height: 100px;
+  border: 1px dashed rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (max-width: 760px) {
+  .ad-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 24px;
+  }
+  .ad-slot {
+    width: 100%;
+    min-height: 90px;
+  }
+}
+
+/* ============================================
    Footer
    ============================================ */
 .footer {

@@ -14,9 +14,11 @@
     const ANISOTROPY = mobile ? 4 : 8;
     const FRAME_MS = mobile ? 1000 / 30 : 0;
 
+    const CAM_Z = mobile ? 13 : 8;
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    camera.position.set(0, 0, 8);
+    camera.position.set(0, 0, CAM_Z);
 
     const renderer = new THREE.WebGLRenderer({
       canvas,
@@ -24,7 +26,7 @@
       alpha: true,
       powerPreference: mobile ? "low-power" : "high-performance",
     });
-    renderer.setPixelRatio(mobile ? 1 : Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(mobile ? Math.min(window.devicePixelRatio, 1.5) : Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 0);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.15;
@@ -528,7 +530,7 @@
       }
 
       const scrollProg = Math.min(scrollY / window.innerHeight, 3);
-      camera.position.z = 8 + scrollProg * 1.2;
+      camera.position.z = CAM_Z + scrollProg * 1.2;
       camera.position.y = -scrollProg * 0.6;
       camera.lookAt(0, 0, 0);
 
