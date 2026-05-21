@@ -387,30 +387,49 @@ function Projects({ t }) {
 }
 
 function AdSection({ t }) {
+  const [visible, setVisible] = useState(false);
+  const insRef = useRef(null);
+
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {}
+
+    const ins = insRef.current;
+    if (!ins) return;
+
+    const check = () => {
+      if (ins.getAttribute("data-ad-status") === "filled") setVisible(true);
+    };
+
+    const observer = new MutationObserver(check);
+    observer.observe(ins, { attributes: true, attributeFilter: ["data-ad-status"] });
+    check();
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <Reveal as="section" id="ad" className="ad-section">
-      <div className="ad-inner">
-        <div className="ad-meta">
-          <span className="ad-chip">{t.ad.chip}</span>
-          <h3 className="ad-heading">{t.ad.heading}</h3>
-          <p className="ad-note">{t.ad.note}</p>
+    <section id="ad" className="ad-section" style={{display: visible ? "" : "none"}}>
+      <Reveal>
+        <div className="ad-inner">
+          <div className="ad-meta">
+            <span className="ad-chip">{t.ad.chip}</span>
+            <h3 className="ad-heading">{t.ad.heading}</h3>
+            <p className="ad-note">{t.ad.note}</p>
+          </div>
+          <div className="ad-slot">
+            <ins ref={insRef}
+                 className="adsbygoogle"
+                 style={{display: "block"}}
+                 data-ad-client="ca-pub-5792705858000224"
+                 data-ad-slot="8984824177"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+          </div>
         </div>
-        <div className="ad-slot">
-          <ins className="adsbygoogle"
-               style={{display: "block"}}
-               data-ad-client="ca-pub-5792705858000224"
-               data-ad-slot="8984824177"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-      </div>
-    </Reveal>
+      </Reveal>
+    </section>
   );
 }
 
