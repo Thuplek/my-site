@@ -396,7 +396,13 @@ function AdSection({ t }) {
           <p className="ad-note">{t.ad.note}</p>
         </div>
         <div className="ad-slot">
-          {/* Cole aqui seu código de anúncio (Google AdSense, etc.) */}
+          <ins className="adsbygoogle"
+               style={{display: "block"}}
+               data-ad-client="ca-pub-5792705858000224"
+               data-ad-slot="8984824177"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script dangerouslySetInnerHTML={{__html: "(adsbygoogle = window.adsbygoogle || []).push({});"}} />
         </div>
       </div>
     </Reveal>
